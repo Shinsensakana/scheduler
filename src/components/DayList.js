@@ -1,41 +1,45 @@
 import React from "react";
 import DayListItem from "./DayListItem";
 
-export default function Daylist(props) {
 
 
-return (
-  <ul>
-    {props.days.map(day => (
-       <DayListItem
-           key={day.id}
-           name={day.name}
-           spots={day.spots}
-           selected={day.name === props.day}
-           setDay={props.handleSetDay}
-       />
-      )
-    )}
-  </ul>
-)
 
 
-  // return props.days.map(day => {
+  export default function DayList(props) {
+    const days = props.days.map((day) => {
+      return (
+        <DayListItem
+          key={day.id}
+          name={day.name}
+          spots={day.spots}
+          selected={day.name === props.day}
+          setDay={props.handleSetDay}
+        />
+      );
+    });
+    return <ul>{days}</ul>;
+  }
 
-  
-//  return (
+
+
+
+  // return (
 //   <ul>
-//     <DayListItem
-//     key={day.id}
-//     name={day.name}
-//     spots={day.spots}
-//     selected={day.name === props.day}
-//     setDay={props.handleSetDay}
-//      />
+//     {props.days.map(day => (
+//        <DayListItem
+//            key={day.id}
+//            name={day.name}
+//            spots={day.spots}
+//            selected={day.name === props.day}
+//            setDay={props.handleSetDay}
+//        />
+//       )
+//     )}
 //   </ul>
-//  )
+// )
 
-// })
-}
+
+ 
+
     
 
