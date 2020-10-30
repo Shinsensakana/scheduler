@@ -10,19 +10,18 @@ import { getAppointmentsForDay, getInterview, getInterviewersForDay } from "help
 export default function Application(props) {
   const setDays = days => setState({ ...state, days });
 
-
-
+  
   const [state, setState] = useState(
     {
       day: "Monday",
       days: [],
       appointments: {},
       interviewers: {}
-
+      
     });
-
-  useEffect(() => {
-    Promise.all([
+    
+    useEffect(() => {
+      Promise.all([
       axios.get('/api/days'),
       axios.get('/api/appointments'),
       axios.get('/api/interviewers'),
@@ -31,13 +30,26 @@ export default function Application(props) {
       setState(prev => ({ ...prev, days: all[0].data, appointments: all[1].data, interviewers: all[2].data }));
     });
   }, []);
-
+  
   const appointments = getAppointmentsForDay(state, state.day);
   const interviewers = getInterviewersForDay(state, state.day);
+  const setDay = day => setState({ ...state, day });
+  
+  function bookInterview(id, interview) {
+    const appointment = {
+      ...state.appointments[id],
+      interview: { ...interview }
+    };
+    const appointments = {
+      ...state.appointments,
+      [id]: appointment
+    };
+    setState({...state, appointments})
+    // console.log("from the bookinterview function", id, interview);
+  }
   
 
-  const setDay = day => setState({ ...state, day });
-
+  
   return (
     <main className="layout">
       <section className="sidebar">
@@ -70,6 +82,7 @@ export default function Application(props) {
               time={appointment.time}
               interview={interview}
               interviewers={interviewers}
+              bookInterview={bookInterview}
             />
           );
         })}
