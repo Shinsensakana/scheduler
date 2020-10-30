@@ -10,15 +10,7 @@ export default function useVisualMode(initial) {
     } 
     newState.push(mode);
     setState(newState);
-    // setState(prev => {
-    //   const newState = [...prev]
-    //   if (replace) {
-    //     newState.pop();
-    //   }
-    //   newState.push(mode)
-    //   return newState;
-    // })
-  }
+    }
   const back = function () {
     if (state.length < 2) {
       return;
@@ -27,8 +19,8 @@ export default function useVisualMode(initial) {
     newState.pop();
     setState(newState);
   }
-  // console.log(state);
+  
   const mode = state.slice(-1)[0]
-  // console.log('mode :', mode);
+  
   return { mode, transition, back };
 }
