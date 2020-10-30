@@ -2,7 +2,7 @@ import React from "react";
 
 import "./styles.scss";
 
-
+import Status from "./Status";
 import Form from "./Form";
 import Header from "./Header";
 import Show from "./Show";
@@ -19,7 +19,7 @@ export default function Appointment(props) {
   const EMPTY = "EMPTY";
   const SHOW = "SHOW";
   const CREATE = "CREATE";
-  const SAVE = "SAVE";
+  const SAVING = "SAVING";
 
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY
@@ -30,9 +30,13 @@ export default function Appointment(props) {
       student: name,
       interviewer
     };
-
-    props.bookInterview(props.id, interview);
-    transition(SHOW);
+    console.log("clicked save")
+    transition(SAVING)
+    props.bookInterview(props.id, interview)
+    .then(() => {
+      console.log("promise from axios")
+      transition(SHOW)});
+    
   }
 
   return (
@@ -55,7 +59,7 @@ export default function Appointment(props) {
           interviewer={props.interview.interviewer}
         />
       )}
-
+      {mode === SAVING && <Status message= "Saving" />}
     </>
   );
 

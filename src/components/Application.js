@@ -44,10 +44,19 @@ export default function Application(props) {
       ...state.appointments,
       [id]: appointment
     };
-    setState({...state, appointments})
-    // console.log("from the bookinterview function", id, interview);
+    console.log("calling axios.put")
+   return axios.put(`/api/appointments/${id}`, appointment)
+    .then(() => {
+
+      setState({...state, appointments})
+
+    });
+    
   }
   
+  function cancelInterview (id, interview) {
+
+  }
 
   
   return (
