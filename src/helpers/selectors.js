@@ -10,9 +10,9 @@ export function getInterviewersForDay(state, day) {
     return interviewersArray;
   }
  
-  targetDay.interviewers.map((interviewerId) => {
+  targetDay.interviewers.map((interviewerId) => 
     interviewersArray.push(state.interviewers[interviewerId])
-  })
+  )
   
   
   

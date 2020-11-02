@@ -14,9 +14,7 @@ import useVisualMode from "hooks/useVisualMode.js";
 
 export default function Appointment(props) {
 
-  console.log("props in appointment", props);
-  // console.log("student in appointment", props.interview)
-  // console.log("interviewer in appointment", props.interview.interviewer)
+ 
   const CONFIRM = "CONFIRM";
   const EMPTY = "EMPTY";
   const SHOW = "SHOW";
@@ -36,11 +34,9 @@ export default function Appointment(props) {
       student: name,
       interviewer
     };
-    console.log("clicked save");
     transition(SAVING);
     props.bookInterview(props.id, interview)
       .then(() => {
-        // console.log("promise from axios");
         transition(SHOW);
       })
       .catch((error) => transition(ERROR_SAVE, true));
