@@ -88,7 +88,8 @@ export default function Application(props) {
           <DayList
             days={state.days}
             day={state.day}
-            handleSetDay={setDay}
+            handleSetDay={setDay} 
+            
           />
         </nav>
         <img

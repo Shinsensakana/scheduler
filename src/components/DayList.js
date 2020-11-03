@@ -14,6 +14,7 @@ import DayListItem from "./DayListItem";
           spots={day.spots}
           selected={day.name === props.day}
           setDay={props.handleSetDay}
+          
         />
       );
     });
@@ -22,21 +23,6 @@ import DayListItem from "./DayListItem";
 
 
 
-
-  // return (
-//   <ul>
-//     {props.days.map(day => (
-//        <DayListItem
-//            key={day.id}
-//            name={day.name}
-//            spots={day.spots}
-//            selected={day.name === props.day}
-//            setDay={props.handleSetDay}
-//        />
-//       )
-//     )}
-//   </ul>
-// )
 
 
  

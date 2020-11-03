@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+
 export default function Application(props) {
   function updateSpots(day, days, appointments) {
     const dayObj = days.find(d => d.name === day);
@@ -18,6 +19,9 @@ export default function Application(props) {
     days: [],
     appointments: {}
   });
+
+  
+
   const setDay = day => setState({ ...state, day });
   useEffect(() => {
     Promise.all([
@@ -25,7 +29,7 @@ export default function Application(props) {
       axios.get('/api/appointments'),
       axios.get('/api/interviewers'),
     ]).then((all) => {
-      
+
       setState(prev => ({ ...prev, days: all[0].data, appointments: all[1].data, interviewers: all[2].data }));
     });
   }, []);
