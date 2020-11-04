@@ -1,3 +1,5 @@
+import axios from "axios"
+
 const fixtures = {
   days: [
     {
@@ -84,7 +86,7 @@ export default {
     }
   }),
    
-  put: jest.fn(url => {
+  put: jest.fn((url) => {
     return Promise.resolve({
       status: 204,
       statusText: "No Data",
@@ -92,7 +94,7 @@ export default {
   
   }), 
 
-  delete: jest.fn(url => {
+  delete: jest.fn((url) => {
     return Promise.resolve({
       status: 204,
       statusText: "No Data",
