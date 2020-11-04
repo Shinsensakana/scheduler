@@ -83,8 +83,16 @@ export default {
       });
     }
   }),
+   
+  put: jest.fn(url => {
+    return Promise.resolve({
+      status: 204,
+      statusText: "No Data",
+    });
+  
+  }), 
 
-  put: jest.fn(() => {
+  delete: jest.fn(url => {
     return Promise.resolve({
       status: 204,
       statusText: "No Data",
