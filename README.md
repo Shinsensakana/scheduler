@@ -1,4 +1,5 @@
 # Interview Scheduler
+A React based app to practice passing on props and state to make appointments, edit appointments and delete appointments. By practicing deconstruction of arrays and objects I avoided mutating state accidentally. It will keep track of number of available interview slots, interviewers and appointments already made.
 
 ## Setup
 
