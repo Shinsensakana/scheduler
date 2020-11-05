@@ -26,8 +26,7 @@ return(
   )}</ul>
 
 </section>
-);
-}
+)};
 
 InterviewerList.propTypes = {
   interviewers: PropTypes.array.isRequired

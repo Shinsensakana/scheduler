@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from "../Button"
+import Button from "../Button";
 export default function Confirm (props) {
   return(
     <main className="appointment__card appointment__card--confirm">

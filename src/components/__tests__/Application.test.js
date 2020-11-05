@@ -10,15 +10,13 @@ import {
   queryByText,
   getAllByTestId,
   getByPlaceholderText,
-  prettyDOM,
   queryByAltText,
-  wait,
   getByDisplayValue
 }
   from "@testing-library/react";
 
 import Application from "components/Application";
-import { debug } from "webpack";
+
 
 afterEach(cleanup);
 
@@ -33,10 +31,7 @@ describe("Application", () => {
     fireEvent.click(getByText("Tuesday"));
 
     expect(getByText("Leopold Silvers")).toBeInTheDocument();
-    // return waitForElement(() => getByText("Monday")).then(() => {
-    //   fireEvent.click(getByText("Tuesday"));
-    //   expect(getByText("Leopold Silvers")).toBeInTheDocument();
-    // });
+    
   });
 
   xit("loads data, books an interview and reduces the spots remaining for the first day by 1", async () => {
@@ -131,10 +126,10 @@ describe("Application", () => {
 
   });
 
-  xit("shows the save error when failing to save an appointment", async () => {
+  it("shows the save error when failing to save an appointment", async () => {
     axios.put.mockRejectedValueOnce();
-    // Uncomment debug() at the bottom of this test for testing
-    const { container, debug } = render(<Application />);
+    
+    const { container } = render(<Application />);
    
     await waitForElement(() => getByText(container, "Archie Cohen"));
    
@@ -159,13 +154,13 @@ describe("Application", () => {
     expect(
       getByText(appointment, "There was an error saving your appointment")
     ).toBeInTheDocument();
-    // debug();
+   
   });
   
   it("shows the delete error when failing to delete an existing appointment", async () => {
     axios.delete.mockRejectedValueOnce();
     
-    const { container, debug } = render(<Application />);
+    const { container } = render(<Application />);
     
     await waitForElement(() => getByText(container, "Archie Cohen"));
     
@@ -184,7 +179,7 @@ describe("Application", () => {
     expect(
       getByText(appointment, "There was an error deleting your appointment")
     ).toBeInTheDocument();
-    // debug();
+    
   });
 
 });
