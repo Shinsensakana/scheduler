@@ -2,7 +2,7 @@ import React from "react";
 import "components/DayListItem.scss";
 import classnames from "classnames";
 
-const formatSpots = function (props) {
+const formatSpots = function (props) {  //show how remaining interview spots in that day
 
   if (props.spots === 0) {
     return "no spots remaining";
@@ -17,7 +17,6 @@ const formatSpots = function (props) {
 };
 
 export default function DayListItem(props) {
-  // console.log("props in daylist items",props)
   let dayClass = classnames({
     "day-list__item": true,
     "day-list__item--selected": props.selected,
@@ -29,7 +28,7 @@ export default function DayListItem(props) {
 
 
   return (
-    <li className={dayClass} onClick={() => props.setDay(props.name)} data-testid = "day">
+    <li className={dayClass} onClick={() => props.setDay(props.name)} data-testid="day">
       <h2 className="text--regular" >{props.name}</h2>
       <h3 className="text--light">{formatSpots(props)}</h3>
     </li>
