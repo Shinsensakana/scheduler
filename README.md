@@ -1,5 +1,9 @@
 # Interview Scheduler
 
+## Screenshots
+
+!["test"](https://github.com/JaySaikitHo/scheduler/blob/master/docs/days%20with%20multiple%20appointments.png)
+
 ## Setup
 
 Install dependencies with `npm install`.
