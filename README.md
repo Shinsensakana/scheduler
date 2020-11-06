@@ -25,7 +25,7 @@ npm run storybook
 ## Screenshots
 
 !["days with multiple appointments"](https://github.com/JaySaikitHo/scheduler/blob/master/docs/days%20with%20multiple%20appointments.png?raw=true)
-!["days selected"](https://github.com/JaySaikitHo/scheduler/blob/master/docs/dayselected.png)
+!["days selected"](https://github.com/JaySaikitHo/scheduler/blob/master/docs/dayselected.png?raw=true)
 !["day selected with interviewer"](docs/dayselected interviewerchosen.png)
 !["saving operation"](docs/saving operation.png)
 !["saved appointment"](docs/saved appointment.png)
