@@ -25,11 +25,11 @@ npm run storybook
 ## Screenshots
 !["days with multiple appointments"](docs/days with multiple appointments.png)
 !["days selected"](docs/dayselected.png)
-!["day selected with interviewer"](docs/dayselected_interviewerchosen.png)
-!["saving operation"](docs/saving_operation.png)
-!["saved appointment"](docs/saved_appointment.png)
-!["deleting operation"](docs/deleting_operation.png)
-!["deleting confirmation"](docs/deleting_confirmation.png)
-!["saving error message"](docs/saving_error_message.png)
-!["deleting error messge"](docs/delet_error_message.png)
+!["day selected with interviewer"](docs/dayselected interviewerchosen.png)
+!["saving operation"](docs/saving operation.png)
+!["saved appointment"](docs/saved appointment.png)
+!["deleting operation"](docs/deleting operation.png)
+!["deleting confirmation"](docs/deleting confirmation.png)
+!["saving error message"](docs/saving error message.png)
+!["deleting error messge"](docs/delet error message.png)
 
