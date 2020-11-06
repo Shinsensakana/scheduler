@@ -23,8 +23,8 @@ npm test
 npm run storybook
 
 ## Screenshots
-docs/days with multiple appointments.png
-!["days with multiple appointments"](docs/days with multiple appointments.png)
+
+!["days with multiple appointments"](/docs/days with multiple appointments.png)
 !["days selected"](docs/dayselected.png)
 !["day selected with interviewer"](docs/dayselected interviewerchosen.png)
 !["saving operation"](docs/saving operation.png)
