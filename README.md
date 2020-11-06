@@ -21,9 +21,9 @@ npm test
 
 ```sh
 npm run storybook
-```
+
 ## Screenshots
-!["days with multiple appointments"](docs/days_with_multiple_appointments.png)
+!["days with multiple appointments"](docs/days with multiple appointments.png)
 !["days selected"](docs/dayselected.png)
 !["day selected with interviewer"](docs/dayselected_interviewerchosen.png)
 !["saving operation"](docs/saving_operation.png)
