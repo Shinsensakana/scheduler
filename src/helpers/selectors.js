@@ -6,7 +6,7 @@ export function getInterviewersForDay(state, day) {
     return item.name === day;
   });
 
-  if (!days.find(item => item.name === day) || state.days.length === 0) {
+  if (!targetDay || state.days.length === 0) {
     return interviewersArray;
   }
  
